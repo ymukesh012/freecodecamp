@@ -1,12 +1,4 @@
 
-# def calculate(num):
-#     lst=[]
-#     for i in range(9):
-#         num=int(input("Enter number"))
-#         lst.append(num)
-#     print(lst)
-
-# calculate()
 
 
 """Question_1: Create a function named calculate() in mean_var_std.py that uses Numpy to output the mean, variance, standard deviation, max, min, and sum of the rows, columns, and elements in a 3 x 3 matrix.
@@ -15,11 +7,9 @@ The input of the function should be a list containing 9 digits. The function sho
 import numpy as np
 def calculate(input_lst):
     if len(input_lst)!=9:
-        # raise ValueError("List must contain nine numbers.") 
-        print("List must contain nine numbers.") 
+        raise ValueError("List must contain nine numbers.") 
         return
     matrix=np.array(input_lst).reshape(3, 3)
-    # print(matrix)
     calculations={
     'mean': [matrix.mean(axis=0).tolist(), matrix.mean(axis=1).tolist(),matrix.mean().item()],
     'variance': [matrix.var(axis=0).tolist(), matrix.var(axis=1).tolist(),matrix.var().item()],
